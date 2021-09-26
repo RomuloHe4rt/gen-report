@@ -1,6 +1,8 @@
 defmodule GenReport do
-
-  def build do
-    # TO DO
+  def build(filename) do
+    case File.read("reports/#{filename}") do
+      {:ok, result} -> result
+      {:error, reason} -> reason
+    end
   end
 end
